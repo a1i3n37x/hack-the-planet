@@ -1,7 +1,5 @@
 # Alien37 Writeups
 
-This repository contains my cybersecurity write-ups, penetration testing notes, and automation scripts.
-
 ## Structure
 
 - **TryHackMe** - Web and Network Security challenges.
@@ -11,4 +9,4 @@ This repository contains my cybersecurity write-ups, penetration testing notes, 
 - **CEH Exam Notes** - Study notes for the CEH certification.
 - **Scripts** - Automation scripts for penetration testing.
 
-🚀 Stay tuned for more updates!
+🧠💻 Hack the planet.🌎🪐
