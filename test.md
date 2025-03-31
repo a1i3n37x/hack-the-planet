@@ -1,13 +1,13 @@
 ---
 Why Build a Cloud-Based VPS for Hacking Labs?
-- **a1i3n37x**
+
 ---
 
 > *Before the payload, before the shell, before the breach—there's the infrastructure.*
 
 Welcome to your next evolution in offensive security. If you're studying for the CEH, grinding through Hack The Box, or deep in the tunnels of TryHackMe, you’ve probably been using your local machine or a VM to do all your hacking work. That’s fine—for now. But real attackers don’t operate that way, and if you want to level up your mindset, your tooling, and your realism, it’s time to build your own **cloud-based VPS attack node.**
 
-We call it the **Alien Command Node.** Here’s why you need one.
+We'll call it the **Alien Command Node.** Here’s why you need it.
 
 ---
 
@@ -79,7 +79,7 @@ We’re not doing that for CEH or labs, but knowing *how* they operate sharpens 
 
 ## 🛸 What’s Next: Build Your Own Alien Command Node
 
-This post is just the blueprint. In the next write-up, we’ll walk step-by-step through:
+This is the blueprint. Let's put it together:
 - Choosing a VPS provider
 - Installing your tools
 - Opening ports and handling shells
