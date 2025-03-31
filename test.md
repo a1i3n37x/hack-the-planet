@@ -2,12 +2,6 @@
 layout: post
 title: "Why Build a Cloud-Based VPS for Hacking Labs?"
 author: a1i3n37x
-category: hacking-labs
-nav:
-  - text: Home
-    link: https://alien37.com
-  - text: The Hacker Manifesto
-    link: https://alien37.com/hackermanifesto.html
 ---
 
 > *Before the payload, before the shell, before the breach—there's the infrastructure.*
@@ -66,15 +60,6 @@ Want to understand:
 - Ngrok alternatives and port tunneling tools?
 
 You learn it *by doing it*. A VPS is your training ground.
-
----
-
-## 💡 Writeup Power: More Legit Walkthroughs
-
-Imagine this in your next HTB or TryHackMe write-up:
-> "Payload hosted on attacker VPS (45.76.x.x) via custom domain → reverse shell tunneled to VPS listener running Sliver."
-
-That’s what separates your walkthroughs from the rest. It shows not just hacking skill, but operational awareness.
 
 ---
 
