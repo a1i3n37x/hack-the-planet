@@ -1,7 +1,6 @@
 ---
-layout: post
-title: "Why Build a Cloud-Based VPS for Hacking Labs?"
-author: a1i3n37x
+Why Build a Cloud-Based VPS for Hacking Labs?
+a1i3n37x
 ---
 
 > *Before the payload, before the shell, before the breach—there's the infrastructure.*
