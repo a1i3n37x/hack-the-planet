@@ -16,7 +16,7 @@ What you’ll get from this box isn’t a challenge in complexity — it’s cla
 
 ---
 
-## 📡 Reconnaissance — Jerry
+## 📡 Reconnaissance — Jerry 
 
 Jerry only exposes a single port. No SSH, no RDP — just 8080.
 
