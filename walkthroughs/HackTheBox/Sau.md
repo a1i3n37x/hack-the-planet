@@ -4,7 +4,7 @@
 
 ---
 
-## ✨ Intro — Sau
+## ✨ Intro — Sau 
 
 Sau is all about digging deeper. Nothing on this box is outright broken — you’re just not meant to see it at first.
 
