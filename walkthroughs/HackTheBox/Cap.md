@@ -1,4 +1,4 @@
-# 🛡️ Hack The Box — CAP (Guided Mode Walkthrough)
+# 🛡️ Hack The Box — CAP (Guided Mode Walkthrough) 
 
 **Difficulty**: Easy  
 **Category**: Linux, Web  
