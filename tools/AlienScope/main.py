@@ -4,6 +4,7 @@ import json
 import os
 from core.fingerprint import fingerprint_site
 from core.nmap_module import scan_ports
+from core.form_finder import find_forms
 
 
 
@@ -105,6 +106,24 @@ def main():
     print("    Detected Headers:")
     for k, v in result["headers"].items():
         print("      - {}: {}".format(k, v))
+
+    
+    # Step 2: Form Discovery
+    print("\n[+] Step 2: Searching for HTML forms...")
+    print("    → Tip: Forms are common injection points — look for login fields, search boxes, file uploads.")
+
+    forms = find_forms(url)
+    if isinstance(forms, dict) and "error" in forms:
+        print("    [!] Error discovering forms: {}".format(forms["error"]))
+    elif not forms:
+        print("    [!] No forms found on the page.")
+    else:
+        print("    [+] Found {} form(s):".format(len(forms)))
+        for idx, form in enumerate(forms, 1):
+            print("      {}. {} → {}".format(idx, form["method"], form["action"]))
+            for input_field in form["inputs"]:
+                print("         - {} ({})".format(input_field["name"], input_field["type"]))
+        result["forms"] = forms
 
     output_dir = "reports"
     os.makedirs(output_dir, exist_ok=True)
