@@ -1,4 +1,3 @@
-
 import time
 import sys
 import json
@@ -7,6 +6,7 @@ import subprocess
 from core.fingerprint import fingerprint_site
 from core.nmap_module import scan_ports
 from core.form_finder import find_forms
+from core.dir_fuzzer import fuzz_directories
 
 def print_banner():
     print()
@@ -161,6 +161,22 @@ def main():
             for input_field in form["inputs"]:
                 print("         - {} ({})".format(input_field["name"], input_field["type"]))
         result["forms"] = forms
+
+    
+    print("\n[+] Step 3: Fuzzing for hidden files and directories...")
+    print("    → Using SecLists common.txt with extensions: .php, .bak, .txt, .html")
+    print("    → Tip: Look for 200 OK and 301 redirects — these often lead to juicy endpoints.")
+
+    fuzz_results = fuzz_directories(url)
+    if isinstance(fuzz_results, dict) and "error" in fuzz_results:
+        print("    [!] Fuzzing failed: {}".format(fuzz_results["error"]))
+    elif not fuzz_results:
+        print("    [!] No accessible directories or files found.")
+    else:
+        print("    [+] Discovered {} paths:".format(len(fuzz_results)))
+        for entry in fuzz_results:
+            print("      - {} [{} bytes]".format(entry["url"], entry["length"]))
+        result["fuzzing"] = fuzz_results
 
     output_dir = "reports"
     os.makedirs(output_dir, exist_ok=True)
