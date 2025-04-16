@@ -84,18 +84,7 @@ def main():
     print("    → Command used: nmap -sV --top-ports 1000 -v {}".format(target_host))
     print("    → Tip: Start with top 1000 ports for speed. Use full range (-p-) if nothing is found.
 ")
-    print("[~] Running Nmap... This may take a moment.")
-
-    process = subprocess.Popen(
-        ["nmap", "-sV", "--top-ports", "1000", "-v", target_host],
-        stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
-        universal_newlines=True
-    )
-    for line in iter(process.stdout.readline, ''):
-        print("    " + line.strip())
-    process.stdout.close()
-    process.wait()
+    print("[~] Running Nmap with Version Detection (-sV)... This may take a moment.")
 
     ports = scan_ports(target_host)
     if not ports:
