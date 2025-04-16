@@ -3,9 +3,34 @@ import sys
 import json
 import os
 from core.fingerprint import fingerprint_site
+from core.nmap_module import scan_ports
 
 
-def print_banner():
+
+    print_banner()
+
+    # Step 0: Port & Service Scan
+    ports = scan_ports(url.replace("http://", "").replace("https://", "").split(":")[0])
+    if not ports:
+        print("\n[!] No open ports found or Nmap scan failed. Exiting.")
+        return
+
+    print("\n[+] Open Ports and Services:")
+    for port in ports:
+        print("    - Port {}/{}: {} {} {}".format(
+            port['port'], port['protocol'], port['state'], port['name'],
+            f"({port['product']} {port['version']})" if port['product'] else ""
+        ))
+
+    # Proceed only if we see HTTP service
+    http_ports = [p for p in ports if 'http' in p['name']]
+    if not http_ports:
+        print("\n[!] No HTTP service detected. Skipping HTTP fingerprinting.")
+        return
+    else:
+        http_port = http_ports[0]['port']
+        if ":" not in url:
+            url += f":{http_port}"
     print("\n")
     print(" █████╗ ██╗     ██╗███████╗███╗   ██╗███████╗ ██████╗ ██████╗ ██████╗ ███████╗")
     print("██╔══██╗██║     ██║██╔════╝████╗  ██║██╔════╝██╔════╝██╔═══██╗██╔══██╗██╔════╝")
@@ -62,7 +87,6 @@ def main():
 
     url = sys.argv[1]
 
-    print_banner()
 
     print("[+] Step 1: Fingerprinting the target using HTTP GET request...")
     print("    → Simulated command: curl -I {}".format(url))
