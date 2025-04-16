@@ -4,8 +4,6 @@ import json
 import os
 from core.fingerprint import fingerprint_site
 
-sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
-
 
 def print_banner():
     print("\n")
@@ -17,11 +15,9 @@ def print_banner():
     print("╚═╝  ╚═╝╚══════╝╚═╝╚══════╝╚═╝  ╚═══╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚══════╝")
     print("       beginner-friendly recon scanner from the Alien37 archives\n")
     print_scope_animation()
-
 def print_scope_animation():
     frames = [
-        """\
-          +-------------+
+        """          +-------------+
           |             |
           |      +      |
           |             |
@@ -31,8 +27,7 @@ def print_scope_animation():
           |             |
           +-------------+
         """,
-        """\
-          +-------------+
+        """          +-------------+
           |             |
           |      ✛      |
           |             |
@@ -42,8 +37,7 @@ def print_scope_animation():
           |             |
           +-------------+
         """,
-        """\
-          +-------------+
+        """          +-------------+
           |             |
           |      ◉      |
           |             |
